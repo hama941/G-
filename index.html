@@ -22,11 +22,10 @@
         ul { list-style: none; }
         img { max-width: 100%; height: auto; vertical-align: bottom; }
         
-        /* 変数定義 (グリーンをテーマカラーに変更) */
+        /* 変数定義 (グリーンをテーマカラー) */
         :root {
             --primary-color: #228b22; /* 信頼と環境のフォレストグリーン */
             --accent-color: #76c945;  /* 明るいグリーンのアクセント */
-            --btn-hover-color: #1a6b1a; /* ボタンホバー時の濃い緑 */
             --bg-gray: #f9f9f9;
             --text-dark: #222;
         }
@@ -86,7 +85,6 @@
         .hero {
             height: 80vh;
             min-height: 500px;
-            /* 自然とクリーンエネルギーを感じさせる画像に変更 */
             background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
             display: flex;
             align-items: center;
@@ -140,7 +138,7 @@
         .services { background: var(--bg-gray); }
         .service-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* カードの幅を少し広げ、2カラム基本に */
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 40px;
             justify-content: center;
         }
@@ -165,7 +163,7 @@
         .service-card h3 { margin-bottom: 20px; font-size: 1.5rem; color: var(--text-dark); }
         .service-card p { font-size: 1rem; color: #666; text-align: left; line-height: 1.9; }
 
-        /* --- お客様の声 (Voice) --- */
+        /* --- お客様の声 (Voice) - イラストアイコンに変更 --- */
         .voice { background: #fff; }
         .voice-grid {
             display: grid;
@@ -182,13 +180,20 @@
             align-items: center;
             margin-bottom: 15px;
         }
+        /* 写真からアイコンに変更するためのCSS修正 */
         .voice-avatar {
             width: 50px;
             height: 50px;
-            background: #ccc;
+            background: #e9f5e9; /* 薄いグリーンの背景 */
             border-radius: 50%;
             margin-right: 15px;
             border: 2px solid var(--accent-color);
+            /* アイコンを中央寄せ */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--primary-color); /* アイコンの色 */
+            font-size: 1.8rem; /* アイコンのサイズ */
         }
         .voice-meta h4 { font-size: 1rem; margin-bottom: 2px; font-weight: 700; }
         .voice-meta span { font-size: 0.85rem; color: var(--primary-color); }
@@ -211,7 +216,7 @@
         }
         .company-table th {
             width: 30%;
-            background: #f4f8f4; /* 淡いグリーンの背景 */
+            background: #f4f8f4;
             font-weight: 700;
             color: var(--primary-color);
         }
@@ -310,12 +315,12 @@
                 <div class="service-card">
                     <div class="service-icon"><i class="fa-solid fa-house-signal"></i></div>
                     <h3>スマートハウス事業</h3>
-                    <p>蓄電池、V2H、HEMS（ホームエネルギーマネジメントシステム）の導入を支援。「創る・蓄える・賢く使う」を実現し、災害にも強く、快適で経済的な次世代の住環境を構築します。</p>
+                    <p>蓄電池、V2H、HEMSの導入を支援。「創る・蓄える・賢く使う」を実現し、災害にも強く、快適で経済的な次世代の住環境を構築します。</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon"><i class="fa-solid fa-solar-panel"></i></div>
                     <h3>太陽光発電システム事業</h3>
-                    <p>住宅用から産業用まで、お客様のニーズと設置環境に合わせた最適な太陽光発電システムをご提案。高品質なパネル選定と確かな施工技術で、クリーンエネルギーの創出をサポートします。</p>
+                    <p>住宅用から産業用まで、お客様のニーズと設置環境に合わせた最適な太陽光発電システムをご提案。高品質な施工技術で、クリーンエネルギーの創出をサポートします。</p>
                 </div>
             </div>
         </div>
@@ -327,7 +332,9 @@
             <div class="voice-grid">
                 <div class="voice-card">
                     <div class="voice-header">
-                        <div class="voice-avatar" style="background: url('https://randomuser.me/api/portraits/men/32.jpg') center/cover;"></div>
+                        <div class="voice-avatar">
+                            <i class="fa-solid fa-circle-user"></i>
+                        </div>
                         <div class="voice-meta">
                             <h4>東京都世田谷区 S様</h4>
                             <span>太陽光発電・蓄電池導入</span>
@@ -337,7 +344,9 @@
                 </div>
                 <div class="voice-card">
                     <div class="voice-header">
-                        <div class="voice-avatar" style="background: url('https://randomuser.me/api/portraits/women/44.jpg') center/cover;"></div>
+                        <div class="voice-avatar">
+                            <i class="fa-solid fa-circle-user"></i>
+                        </div>
                         <div class="voice-meta">
                             <h4>大阪府吹田市 K様</h4>
                             <span>V2Hシステム導入</span>
@@ -347,7 +356,9 @@
                 </div>
                 <div class="voice-card">
                     <div class="voice-header">
-                        <div class="voice-avatar" style="background: url('https://randomuser.me/api/portraits/men/85.jpg') center/cover;"></div>
+                        <div class="voice-avatar">
+                            <i class="fa-solid fa-circle-user"></i>
+                        </div>
                         <div class="voice-meta">
                             <h4>北海道札幌市 T様</h4>
                             <span>太陽光発電導入</span>
