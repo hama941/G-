@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>株式会社Gステラ | 全国対応のエネルギー・住環境ソリューション</title>
+    <title>株式会社Gステラ | 全国対応のスマートハウス・太陽光事業</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
@@ -22,10 +22,11 @@
         ul { list-style: none; }
         img { max-width: 100%; height: auto; vertical-align: bottom; }
         
-        /* 変数定義 */
+        /* 変数定義 (グリーンをテーマカラーに変更) */
         :root {
-            --primary-color: #0056b3; /* 信頼の青 */
-            --accent-color: #28a745;  /* エコ・成長の緑 */
+            --primary-color: #228b22; /* 信頼と環境のフォレストグリーン */
+            --accent-color: #76c945;  /* 明るいグリーンのアクセント */
+            --btn-hover-color: #1a6b1a; /* ボタンホバー時の濃い緑 */
             --bg-gray: #f9f9f9;
             --text-dark: #222;
         }
@@ -59,8 +60,8 @@
             width: 100%;
             top: 0;
             left: 0;
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             z-index: 1000;
             height: 70px;
             display: flex;
@@ -85,7 +86,8 @@
         .hero {
             height: 80vh;
             min-height: 500px;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            /* 自然とクリーンエネルギーを感じさせる画像に変更 */
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -98,11 +100,13 @@
             margin-bottom: 20px;
             letter-spacing: 0.05em;
             text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            font-weight: 700;
         }
         .hero-content p {
             font-size: 1.2rem;
             margin-bottom: 30px;
             text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            font-weight: 500;
         }
 
         /* --- 課題・ミッション --- */
@@ -126,8 +130,9 @@
             flex: 1;
             height: 300px;
             background-color: #eee;
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
         }
         .mission-img img { width: 100%; height: 100%; object-fit: cover; }
 
@@ -135,37 +140,42 @@
         .services { background: var(--bg-gray); }
         .service-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* カードの幅を少し広げ、2カラム基本に */
+            gap: 40px;
+            justify-content: center;
         }
         .service-card {
             background: #fff;
-            padding: 30px;
-            border-radius: 8px;
+            padding: 40px;
+            border-radius: 12px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: 0.3s;
             text-align: center;
+            border-bottom: 3px solid transparent;
         }
-        .service-card:hover { transform: translateY(-5px); }
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-bottom: 3px solid var(--accent-color);
+        }
         .service-icon {
-            font-size: 3rem;
-            color: var(--accent-color);
-            margin-bottom: 20px;
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin-bottom: 25px;
         }
-        .service-card h3 { margin-bottom: 15px; font-size: 1.3rem; }
-        .service-card p { font-size: 0.9rem; color: #666; text-align: left; }
+        .service-card h3 { margin-bottom: 20px; font-size: 1.5rem; color: var(--text-dark); }
+        .service-card p { font-size: 1rem; color: #666; text-align: left; line-height: 1.9; }
 
         /* --- お客様の声 (Voice) --- */
         .voice { background: #fff; }
         .voice-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 25px;
         }
         .voice-card {
             background: var(--bg-gray);
-            padding: 20px;
-            border-radius: 8px;
+            padding: 25px;
+            border-radius: 12px;
         }
         .voice-header {
             display: flex;
@@ -178,9 +188,11 @@
             background: #ccc;
             border-radius: 50%;
             margin-right: 15px;
+            border: 2px solid var(--accent-color);
         }
-        .voice-meta h4 { font-size: 1rem; margin-bottom: 2px; }
-        .voice-meta span { font-size: 0.8rem; color: #777; }
+        .voice-meta h4 { font-size: 1rem; margin-bottom: 2px; font-weight: 700; }
+        .voice-meta span { font-size: 0.85rem; color: var(--primary-color); }
+        .voice-card p { font-size: 0.95rem; color: #555; }
 
         /* --- 会社概要 (Company) --- */
         .company { background: var(--bg-gray); }
@@ -188,19 +200,27 @@
             width: 100%;
             border-collapse: collapse;
             background: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            border-radius: 8px;
+            overflow: hidden;
         }
         .company-table th, .company-table td {
-            padding: 20px;
+            padding: 20px 25px;
             border-bottom: 1px solid #eee;
             text-align: left;
         }
-        .company-table th { width: 30%; background: #f0f4f8; font-weight: bold; }
+        .company-table th {
+            width: 30%;
+            background: #f4f8f4; /* 淡いグリーンの背景 */
+            font-weight: 700;
+            color: var(--primary-color);
+        }
 
         /* --- フッター --- */
         footer {
             background: #222;
             color: #fff;
-            padding: 50px 0 20px;
+            padding: 60px 0 20px;
         }
         .footer-content {
             display: flex;
@@ -209,25 +229,28 @@
             text-align: center;
             margin-bottom: 40px;
         }
-        .footer-logo { font-size: 1.5rem; font-weight: bold; margin-bottom: 20px; display: block; }
-        .footer-info p { margin-bottom: 10px; color: #bbb; font-size: 0.9rem; }
+        .footer-logo { font-size: 1.8rem; font-weight: 700; margin-bottom: 20px; display: block; color: var(--accent-color); }
+        .footer-info p { margin-bottom: 10px; color: #bbb; font-size: 0.95rem; }
         .copyright {
             text-align: center;
             border-top: 1px solid #444;
-            padding-top: 20px;
+            padding-top: 25px;
             color: #777;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
         }
 
         /* --- スマホ対応 (レスポンシブ) --- */
         @media (max-width: 768px) {
-            .hero-content h1 { font-size: 1.8rem; }
-            .mission-block { flex-direction: column !important; gap: 20px; }
+            .hero-content h1 { font-size: 2rem; }
+            .mission-block { flex-direction: column !important; gap: 30px; }
+            .mission-img { height: 250px; }
+            .service-grid { grid-template-columns: 1fr; }
             .voice-grid { grid-template-columns: 1fr; }
             .nav-menu { display: none; }
             .header-inner { justify-content: center; }
             .company-table th, .company-table td { display: block; width: 100%; }
-            .company-table th { background: transparent; padding-bottom: 5px; color: var(--primary-color); }
+            .company-table th { background: transparent; padding-bottom: 5px; color: var(--primary-color); border-bottom: none; }
+            .company-table td { padding-top: 0; }
         }
     </style>
 </head>
@@ -249,8 +272,8 @@
 
     <section class="hero">
         <div class="container hero-content">
-            <h1>日本全国へ、<br>次世代のエネルギーと暮らしを。</h1>
-            <p>大阪を拠点に全国へ。持続可能な社会を創造するパートナーとして。</p>
+            <h1>日本全国へ、<br>クリーンなエネルギーと未来を。</h1>
+            <p>大阪を拠点に全国対応。スマートハウスと太陽光で持続可能な社会を創造します。</p>
         </div>
     </section>
 
@@ -260,21 +283,21 @@
             
             <div class="mission-block">
                 <div class="mission-text">
-                    <h3>エネルギーと暮らしの課題解決</h3>
-                    <p>現代社会はエネルギー問題や環境変化など、多くの課題に直面しています。私たちは住環境を通じて、日本全国の課題解決に取り組み、次世代に誇れる未来を創造します。</p>
+                    <h3>エネルギーの課題をテクノロジーで解決</h3>
+                    <p>脱炭素社会の実現に向け、再生可能エネルギーの普及は急務です。私たちは、最新のスマートハウス技術と太陽光発電システムを通じて、環境負荷の低減と経済的な暮らしの両立を目指します。</p>
                 </div>
                 <div class="mission-img">
-                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="環境イメージ">
+                    <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="太陽光とグリーンのイメージ">
                 </div>
             </div>
 
             <div class="mission-block">
                 <div class="mission-text">
-                    <h3>全国対応のネットワークと実績</h3>
-                    <p>大阪本社を拠点に、全国各地で均質なサービスを提供できる体制を整えています。地域ごとの気候特性を考慮しつつ、最新のテクノロジーを活用した最適なソリューションをお届けします。</p>
+                    <h3>全国対応の高品質な施工ネットワーク</h3>
+                    <p>大阪本社を拠点に、全国各地のパートナーと連携。地域ごとの特性を熟知したプロフェッショナルが、設計から施工、メンテナンスまで、均質で高品質なサービスを提供します。</p>
                 </div>
                 <div class="mission-img">
-                    <img src="https://images.unsplash.com/photo-1460472178825-e5240623afd5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="ビジネスネットワーク">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="全国ネットワークのイメージ">
                 </div>
             </div>
         </div>
@@ -285,19 +308,14 @@
             <h2 class="section-title">Service</h2>
             <div class="service-grid">
                 <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-house-chimney"></i></div>
-                    <h3>総合リフォーム事業</h3>
-                    <p>一般住宅からオフィスビルまで。全国規模のネットワークで、高品質なリノベーション・改修工事を提供します。</p>
+                    <div class="service-icon"><i class="fa-solid fa-house-signal"></i></div>
+                    <h3>スマートハウス事業</h3>
+                    <p>蓄電池、V2H、HEMS（ホームエネルギーマネジメントシステム）の導入を支援。「創る・蓄える・賢く使う」を実現し、災害にも強く、快適で経済的な次世代の住環境を構築します。</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon"><i class="fa-solid fa-solar-panel"></i></div>
-                    <h3>スマートエネルギー事業</h3>
-                    <p>太陽光発電、蓄電池、V2Hの導入支援。脱炭素社会の実現に向け、経済的で環境に優しいシステムを構築します。</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
-                    <h3>全国コンサルティング</h3>
-                    <p>補助金活用や省エネ診断など、お客様の立地条件やニーズに合わせた最適なプランを全国どこでもご提案します。</p>
+                    <h3>太陽光発電システム事業</h3>
+                    <p>住宅用から産業用まで、お客様のニーズと設置環境に合わせた最適な太陽光発電システムをご提案。高品質なパネル選定と確かな施工技術で、クリーンエネルギーの創出をサポートします。</p>
                 </div>
             </div>
         </div>
@@ -312,30 +330,30 @@
                         <div class="voice-avatar" style="background: url('https://randomuser.me/api/portraits/men/32.jpg') center/cover;"></div>
                         <div class="voice-meta">
                             <h4>東京都世田谷区 S様</h4>
-                            <span>太陽光発電・蓄電池</span>
+                            <span>太陽光発電・蓄電池導入</span>
                         </div>
                     </div>
-                    <p>遠方からの依頼でしたが、オンラインでの打ち合わせもスムーズで、施工まで安心してお任せできました。</p>
+                    <p>電気代高騰の対策として導入しました。遠方でしたがオンラインでの丁寧な説明があり、施工もスムーズ。毎日の発電量を見るのが楽しみになりました。</p>
                 </div>
                 <div class="voice-card">
                     <div class="voice-header">
                         <div class="voice-avatar" style="background: url('https://randomuser.me/api/portraits/women/44.jpg') center/cover;"></div>
                         <div class="voice-meta">
                             <h4>大阪府吹田市 K様</h4>
-                            <span>フルリノベーション</span>
+                            <span>V2Hシステム導入</span>
                         </div>
                     </div>
-                    <p>本社が近かったこともあり依頼しました。提案力が素晴らしく、想像以上の快適な住まいになりました。</p>
+                    <p>電気自動車の購入に合わせてV2Hを依頼。本社が近く安心感がありました。車のバッテリーを家庭で使えるようになり、災害時の備えとしても大変満足しています。</p>
                 </div>
                 <div class="voice-card">
                     <div class="voice-header">
                         <div class="voice-avatar" style="background: url('https://randomuser.me/api/portraits/men/85.jpg') center/cover;"></div>
                         <div class="voice-meta">
                             <h4>北海道札幌市 T様</h4>
-                            <span>断熱改修・外壁</span>
+                            <span>太陽光発電導入</span>
                         </div>
                     </div>
-                    <p>寒冷地特有の悩みを理解していただき、適切な断熱提案をしてくれました。全国対応の実績を感じました。</p>
+                    <p>積雪地帯での設置に不安がありましたが、雪国対応の架台やパネルを提案していただき納得して導入できました。冬場の発電シミュレーションも正確でした。</p>
                 </div>
             </div>
         </div>
@@ -355,11 +373,7 @@
                 </tr>
                 <tr>
                     <th>事業内容</th>
-                    <td>総合リフォーム事業、スマートエネルギー事業、経営コンサルティング</td>
-                </tr>
-                <tr>
-                    <th>代表者</th>
-                    <td>代表取締役　[代表者様のお名前]</td>
+                    <td>スマートハウス事業、太陽光発電システム事業</td>
                 </tr>
             </table>
         </div>
@@ -368,11 +382,9 @@
     <footer id="contact">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-left">
-                    <span class="footer-logo">株式会社Gステラ</span>
-                    <div class="footer-info">
-                        <p>〒532-0004 大阪府大阪市淀川区西宮原１丁目６</p>
-                    </div>
+                <span class="footer-logo">G STELLA</span>
+                <div class="footer-info">
+                    <p>〒532-0004 大阪府大阪市淀川区西宮原１丁目６</p>
                 </div>
             </div>
             <div class="copyright">
