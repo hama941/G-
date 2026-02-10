@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>株式会社Gステラ | 未来の暮らしを創造する</title>
+    <title>株式会社Gステラ | 全国対応のエネルギー・住環境ソリューション</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
@@ -22,7 +22,7 @@
         ul { list-style: none; }
         img { max-width: 100%; height: auto; vertical-align: bottom; }
         
-        /* 変数定義 (Step House風のクリーンな色合い) */
+        /* 変数定義 */
         :root {
             --primary-color: #0056b3; /* 信頼の青 */
             --accent-color: #28a745;  /* エコ・成長の緑 */
@@ -52,19 +52,6 @@
             background: var(--primary-color);
             margin: 15px auto 0;
         }
-        .btn {
-            display: inline-block;
-            padding: 15px 40px;
-            background: var(--primary-color);
-            color: #fff;
-            font-weight: bold;
-            border-radius: 50px;
-            box-shadow: 0 4px 15px rgba(0,86,179,0.3);
-        }
-        .btn:hover {
-            background: #004494;
-            transform: translateY(-2px);
-        }
 
         /* --- ヘッダー --- */
         header {
@@ -93,31 +80,32 @@
         .nav-menu { display: flex; gap: 30px; }
         .nav-menu li a { font-weight: 500; font-size: 0.95rem; }
         .nav-menu li a:hover { color: var(--primary-color); }
-        /* モバイル用メニューは簡易化のため省略（実案件ではハンバーガーメニュー推奨） */
 
         /* --- ヒーローエリア (メインビジュアル) --- */
         .hero {
             height: 80vh;
             min-height: 500px;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: #fff;
-            margin-top: 70px; /* ヘッダー分 */
+            margin-top: 70px;
         }
         .hero-content h1 {
             font-size: 3rem;
             margin-bottom: 20px;
             letter-spacing: 0.05em;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
         .hero-content p {
             font-size: 1.2rem;
             margin-bottom: 30px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
         }
 
-        /* --- 課題・ミッション (Step House風のテキストエリア) --- */
+        /* --- 課題・ミッション --- */
         .mission { background: #fff; }
         .mission-block {
             display: flex;
@@ -131,6 +119,8 @@
             font-size: 1.5rem;
             margin-bottom: 20px;
             color: var(--primary-color);
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
         }
         .mission-img {
             flex: 1;
@@ -214,8 +204,9 @@
         }
         .footer-content {
             display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center; /* 中央寄せに変更 */
+            text-align: center;
             margin-bottom: 40px;
         }
         .footer-logo { font-size: 1.5rem; font-weight: bold; margin-bottom: 20px; display: block; }
@@ -230,11 +221,13 @@
 
         /* --- スマホ対応 (レスポンシブ) --- */
         @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2rem; }
+            .hero-content h1 { font-size: 1.8rem; }
             .mission-block { flex-direction: column !important; gap: 20px; }
             .voice-grid { grid-template-columns: 1fr; }
-            .nav-menu { display: none; /* 簡易実装のため非表示 */ }
+            .nav-menu { display: none; }
             .header-inner { justify-content: center; }
+            .company-table th, .company-table td { display: block; width: 100%; }
+            .company-table th { background: transparent; padding-bottom: 5px; color: var(--primary-color); }
         }
     </style>
 </head>
@@ -248,7 +241,6 @@
                     <li><a href="#mission">理念・ビジョン</a></li>
                     <li><a href="#service">事業内容</a></li>
                     <li><a href="#company">会社概要</a></li>
-                    <li><a href="#contact" class="btn" style="padding: 8px 20px; font-size: 0.9rem;">お問い合わせ</a></li>
                 </ul>
             </nav>
         </div>
@@ -256,9 +248,8 @@
 
     <section class="hero">
         <div class="container hero-content">
-            <h1>未来の子供たちのために<br>持続可能な住環境を。</h1>
-            <p>長野県岡谷市から、安心と快適な暮らしをお届けします。</p>
-            <a href="#contact" class="btn">無料相談はこちら</a>
+            <h1>日本全国へ、<br>次世代のエネルギーと暮らしを。</h1>
+            <p>大阪を拠点に全国へ。持続可能な社会を創造するパートナーとして。</p>
         </div>
     </section>
 
@@ -269,7 +260,7 @@
             <div class="mission-block">
                 <div class="mission-text">
                     <h3>エネルギーと暮らしの課題解決</h3>
-                    <p>現代社会はエネルギー問題や環境変化など、多くの課題に直面しています。私たちは住環境を通じて、これらの課題解決に取り組み、次世代に誇れる未来を創造します。</p>
+                    <p>現代社会はエネルギー問題や環境変化など、多くの課題に直面しています。私たちは住環境を通じて、日本全国の課題解決に取り組み、次世代に誇れる未来を創造します。</p>
                 </div>
                 <div class="mission-img">
                     <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="環境イメージ">
@@ -278,11 +269,11 @@
 
             <div class="mission-block">
                 <div class="mission-text">
-                    <h3>地域に根ざした安心の施工</h3>
-                    <p>長野県岡谷市の気候や風土を熟知しているからこそできる提案があります。お客様一人ひとりのライフスタイルに合わせた、最適なリフォーム・住まいづくりをご提供します。</p>
+                    <h3>全国対応のネットワークと実績</h3>
+                    <p>大阪本社を拠点に、全国各地で均質なサービスを提供できる体制を整えています。地域ごとの気候特性を考慮しつつ、最新のテクノロジーを活用した最適なソリューションをお届けします。</p>
                 </div>
                 <div class="mission-img">
-                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="施工イメージ">
+                    <img src="https://images.unsplash.com/photo-1460472178825-e5240623afd5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="ビジネスネットワーク">
                 </div>
             </div>
         </div>
@@ -294,109 +285,13 @@
             <div class="service-grid">
                 <div class="service-card">
                     <div class="service-icon"><i class="fa-solid fa-house-chimney"></i></div>
-                    <h3>住宅リフォーム事業</h3>
-                    <p>外壁塗装、屋根修理から内装リノベーションまで。長く安心して住める家づくりをサポートします。</p>
+                    <h3>総合リフォーム事業</h3>
+                    <p>一般住宅からオフィスビルまで。全国規模のネットワークで、高品質なリノベーション・改修工事を提供します。</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon"><i class="fa-solid fa-solar-panel"></i></div>
-                    <h3>スマートハウス事業</h3>
-                    <p>太陽光発電や蓄電池システムの導入支援。環境に優しく、経済的な暮らしをご提案します。</p>
+                    <h3>スマートエネルギー事業</h3>
+                    <p>太陽光発電、蓄電池、V2Hの導入支援。脱炭素社会の実現に向け、経済的で環境に優しいシステムを構築します。</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
-                    <h3>コンサルティング</h3>
-                    <p>お客様のライフプランに合わせた住まいの診断や、補助金活用の提案など、トータルでサポートします。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section voice">
-        <div class="container">
-            <h2 class="section-title">Voice</h2>
-            <div class="voice-grid">
-                <div class="voice-card">
-                    <div class="voice-header">
-                        <div class="voice-avatar" style="background: url('https://randomuser.me/api/portraits/men/32.jpg') center/cover;"></div>
-                        <div class="voice-meta">
-                            <h4>岡谷市 S様</h4>
-                            <span>リフォーム実施</span>
-                        </div>
-                    </div>
-                    <p>親身になって相談に乗っていただき、理想通りの仕上がりになりました。地元の会社なので安心感がありました。</p>
-                </div>
-                <div class="voice-card">
-                    <div class="voice-header">
-                        <div class="voice-avatar" style="background: url('https://randomuser.me/api/portraits/women/44.jpg') center/cover;"></div>
-                        <div class="voice-meta">
-                            <h4>諏訪市 K様</h4>
-                            <span>太陽光設置</span>
-                        </div>
-                    </div>
-                    <p>電気代のシミュレーションから丁寧にしていただき、メリットが明確になりました。工事もスムーズでした。</p>
-                </div>
-                <div class="voice-card">
-                    <div class="voice-header">
-                        <div class="voice-avatar" style="background: url('https://randomuser.me/api/portraits/men/85.jpg') center/cover;"></div>
-                        <div class="voice-meta">
-                            <h4>松本市 T様</h4>
-                            <span>外壁塗装</span>
-                        </div>
-                    </div>
-                    <p>近所への挨拶回りもしっかりしていただき、職人さんのマナーも良かったです。家が新築のように蘇りました。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="company" class="section company">
-        <div class="container">
-            <h2 class="section-title">Company</h2>
-            <table class="company-table">
-                <tr>
-                    <th>会社名</th>
-                    <td>株式会社Gステラ</td>
-                </tr>
-                <tr>
-                    <th>所在地</th>
-                    <td>〒394-0004<br>長野県岡谷市新明町4－19－29</td>
-                </tr>
-                <tr>
-                    <th>事業内容</th>
-                    <td>住宅リフォーム事業、スマートハウス事業、コンサルティング事業<br>（※必要に応じて修正してください）</td>
-                </tr>
-                <tr>
-                    <th>代表者</th>
-                    <td>代表取締役 （お名前）</td>
-                </tr>
-                <tr>
-                    <th>お問い合わせ</th>
-                    <td>00-0000-0000（代表）</td>
-                </tr>
-            </table>
-        </div>
-    </section>
-
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-left">
-                    <span class="footer-logo">株式会社Gステラ</span>
-                    <div class="footer-info">
-                        <p>〒394-0004 長野県岡谷市新明町4－19－29</p>
-                        <p>TEL: 00-0000-0000 / FAX: 00-0000-0000</p>
-                        <p>Email: info@example.com</p>
-                    </div>
-                </div>
-                <div class="footer-right">
-                    <a href="#" class="btn">お問い合わせフォーム</a>
-                </div>
-            </div>
-            <div class="copyright">
-                &copy; G Stella Co., Ltd. All Rights Reserved.
-            </div>
-        </div>
-    </footer>
-
-</body>
-</html>
+                    <div class="service-icon"><i class="
