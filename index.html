@@ -3,161 +3,400 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>害虫レスキュー隊 | ゴキブリ駆除2,980円〜最短15分急行</title>
+    <title>株式会社Gステラ | 未来の暮らしを創造する</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        :root {
-            --main-color: #003366; /* 信頼の濃紺 */
-            --accent-color: #ffcc00; /* 緊急のイエロー */
-            --point-color: #d32f2f; /* 強調の赤 */
-            --text-color: #333;
-            --bg-light: #f4f7f9;
-        }
-
+        /* --- リセットCSS & 基本設定 --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
-            margin: 0; padding: 0; color: var(--text-color); line-height: 1.8; overflow-x: hidden;
+            font-family: 'Noto Sans JP', sans-serif;
+            color: #333;
+            line-height: 1.8;
+            background-color: #fff;
+        }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; vertical-align: bottom; }
+        
+        /* 変数定義 (Step House風のクリーンな色合い) */
+        :root {
+            --primary-color: #0056b3; /* 信頼の青 */
+            --accent-color: #28a745;  /* エコ・成長の緑 */
+            --bg-gray: #f9f9f9;
+            --text-dark: #222;
         }
 
-        /* ヘッダー */
+        /* --- 共通クラス --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .section { padding: 80px 0; }
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            color: var(--text-dark);
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 15px auto 0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--primary-color);
+            color: #fff;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,86,179,0.3);
+        }
+        .btn:hover {
+            background: #004494;
+            transform: translateY(-2px);
+        }
+
+        /* --- ヘッダー --- */
         header {
-            background: #fff; padding: 10px 5%; display: flex; justify-content: space-between; align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            height: 70px;
+            display: flex;
+            align-items: center;
         }
-        .logo-area h2 { margin: 0; font-size: 1.5rem; color: var(--main-color); border-left: 5px solid var(--accent-color); padding-left: 10px; }
-        .header-info { text-align: right; }
-        .header-tel { font-size: 1.4rem; font-weight: bold; color: var(--point-color); text-decoration: none; }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .nav-menu { display: flex; gap: 30px; }
+        .nav-menu li a { font-weight: 500; font-size: 0.95rem; }
+        .nav-menu li a:hover { color: var(--primary-color); }
+        /* モバイル用メニューは簡易化のため省略（実案件ではハンバーガーメニュー推奨） */
 
-        /* メインビジュアル */
+        /* --- ヒーローエリア (メインビジュアル) --- */
         .hero {
-            background: linear-gradient(rgba(0,51,102,0.8), rgba(0,51,102,0.8)), url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80'); /* 清潔な部屋のイメージ */
-            background-size: cover; background-position: center;
-            color: #fff; padding: 80px 5%; text-align: center;
+            height: 80vh;
+            min-height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            margin-top: 70px; /* ヘッダー分 */
         }
-        .hero-badge { background: var(--accent-color); color: #000; display: inline-block; padding: 5px 20px; font-weight: bold; border-radius: 50px; margin-bottom: 20px; }
-        .hero h1 { font-size: 2.8rem; margin: 0 0 20px; line-height: 1.3; }
-        .hero-price { font-size: 1.5rem; margin-bottom: 30px; }
-        .hero-price span { font-size: 4rem; color: var(--accent-color); font-weight: bold; text-shadow: 2px 2px 0 #000; }
-
-        /* 特徴セクション */
-        .features { padding: 60px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; background: #fff; }
-        .feature-card { background: var(--bg-light); padding: 30px; border-radius: 15px; text-align: center; border-bottom: 5px solid var(--accent-color); }
-        .feature-card h3 { color: var(--main-color); font-size: 1.4rem; }
-        .feature-icon { font-size: 3rem; margin-bottom: 10px; }
-
-        /* お客様の声セクション */
-        .voice { background: var(--bg-light); padding: 60px 5%; }
-        .section-title { text-align: center; font-size: 2rem; margin-bottom: 40px; color: var(--main-color); }
-        .voice-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .voice-item { background: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 3px 15px rgba(0,0,0,0.05); }
-        .voice-meta { font-size: 0.85rem; color: #666; margin-bottom: 10px; display: flex; justify-content: space-between; }
-        .stars { color: var(--accent-color); }
-
-        /* 料金・CTAエリア */
-        .cta-area { background: var(--main-color); color: #fff; padding: 60px 5%; text-align: center; }
-        .cta-btn { 
-            display: inline-block; background: var(--accent-color); color: #000; padding: 25px 50px; 
-            font-size: 2rem; font-weight: bold; text-decoration: none; border-radius: 100px; 
-            box-shadow: 0 10px 0 #b28900; transition: all 0.2s; margin-top: 20px;
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            letter-spacing: 0.05em;
         }
-        .cta-btn:active { transform: translateY(5px); box-shadow: 0 5px 0 #b28900; }
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
 
-        /* 会社概要テーブル */
-        .info-table { width: 100%; max-width: 800px; margin: 40px auto; border-collapse: collapse; background: #fff; }
-        .info-table th, .info-table td { border: 1px solid #ddd; padding: 15px; text-align: left; }
-        .info-table th { background: #eee; width: 30%; }
+        /* --- 課題・ミッション (Step House風のテキストエリア) --- */
+        .mission { background: #fff; }
+        .mission-block {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+        .mission-block:nth-child(even) { flex-direction: row-reverse; }
+        .mission-text { flex: 1; }
+        .mission-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        .mission-img {
+            flex: 1;
+            height: 300px;
+            background-color: #eee;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .mission-img img { width: 100%; height: 100%; object-fit: cover; }
 
-        footer { background: #333; color: #fff; text-align: center; padding: 30px; font-size: 0.8rem; }
+        /* --- 事業内容 (Service) --- */
+        .services { background: var(--bg-gray); }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            text-align: center;
+        }
+        .service-card:hover { transform: translateY(-5px); }
+        .service-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+        .service-card h3 { margin-bottom: 15px; font-size: 1.3rem; }
+        .service-card p { font-size: 0.9rem; color: #666; text-align: left; }
 
+        /* --- お客様の声 (Voice) --- */
+        .voice { background: #fff; }
+        .voice-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .voice-card {
+            background: var(--bg-gray);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .voice-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .voice-avatar {
+            width: 50px;
+            height: 50px;
+            background: #ccc;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        .voice-meta h4 { font-size: 1rem; margin-bottom: 2px; }
+        .voice-meta span { font-size: 0.8rem; color: #777; }
+
+        /* --- 会社概要 (Company) --- */
+        .company { background: var(--bg-gray); }
+        .company-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+        }
+        .company-table th, .company-table td {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+        .company-table th { width: 30%; background: #f0f4f8; font-weight: bold; }
+
+        /* --- フッター --- */
+        footer {
+            background: #222;
+            color: #fff;
+            padding: 50px 0 20px;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        .footer-logo { font-size: 1.5rem; font-weight: bold; margin-bottom: 20px; display: block; }
+        .footer-info p { margin-bottom: 10px; color: #bbb; font-size: 0.9rem; }
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            color: #777;
+            font-size: 0.8rem;
+        }
+
+        /* --- スマホ対応 (レスポンシブ) --- */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 1.8rem; }
-            .hero-price span { font-size: 2.5rem; }
-            .cta-btn { font-size: 1.5rem; width: 90%; padding: 20px 0; }
+            .hero-content h1 { font-size: 2rem; }
+            .mission-block { flex-direction: column !important; gap: 20px; }
+            .voice-grid { grid-template-columns: 1fr; }
+            .nav-menu { display: none; /* 簡易実装のため非表示 */ }
+            .header-inner { justify-content: center; }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="logo-area">
-        <h2>害虫レスキュー隊</h2>
-    </div>
-    <div class="header-info">
-        <div style="font-size: 0.7rem;">24時間365日受付・大阪全域対応</div>
-        <a href="tel:05035280140" class="header-tel">📞 050-3528-0140</a>
-    </div>
-</header>
-
-<section class="hero">
-    <div class="hero-badge">現地調査・お見積もり0円</div>
-    <h1>ゴキブリのトラブル<br>プロの技術で徹底根絶！</h1>
-    <div class="hero-price">
-        地域最安値に挑戦中！ <br>
-        <span>2,980</span> 円〜(税込)
-    </div>
-    <p>最短15分で急行！深夜・早朝のSOSもお任せください。</p>
-    <a href="tel:05035280140" class="cta-btn">今すぐ電話で無料相談</a>
-</section>
-
-<section class="features">
-    <div class="feature-card">
-        <div class="feature-icon">⏱</div>
-        <h3>業界最速クラスの対応</h3>
-        <p>大阪府内に多数のスタッフが待機。お電話から最短15分で現場へ駆けつけます。</p>
-    </div>
-    <div class="feature-card">
-        <div class="feature-icon">🛡️</div>
-        <h3>再発防止を徹底</h3>
-        <p>今いる害虫の駆除はもちろん、侵入経路を完全に封鎖。最大5年の保証付きで安心。</p>
-    </div>
-    <div class="feature-card">
-        <div class="feature-icon">💰</div>
-        <h3>明朗会計をお約束</h3>
-        <p>作業前に必ずお見積もりを提示。お客様の承諾なしに追加費用が発生することはありません。</p>
-    </div>
-</section>
-
-<section class="voice">
-    <h2 class="section-title">ご利用者様のリアルな声</h2>
-    <div class="voice-grid">
-        <div class="voice-item">
-            <div class="voice-meta"><span>大阪市北区 A様</span><span class="stars">★★★★★</span></div>
-            <p><strong>「夜中の絶望から救われました」</strong><br>キッチンで巨大なものに遭遇。パニックで電話しましたが、すぐ来てくれて駆除後の清掃まで丁寧でした。</p>
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">G STELLA</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#mission">理念・ビジョン</a></li>
+                    <li><a href="#service">事業内容</a></li>
+                    <li><a href="#company">会社概要</a></li>
+                    <li><a href="#contact" class="btn" style="padding: 8px 20px; font-size: 0.9rem;">お問い合わせ</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="voice-item">
-            <div class="voice-meta"><span>吹田市 S様</span><span class="stars">★★★★★</span></div>
-            <p><strong>「安くてもプロの仕事！」</strong><br>2,980円〜という価格に惹かれました。安いのに調査が細かく、どこから入ってきたか特定してくれました。</p>
-        </div>
-        <div class="voice-item">
-            <div class="voice-meta"><span>豊中市 M様</span><span class="stars">★★★★★</span></div>
-            <p><strong>「子供にも安心な薬剤」</strong><br>赤ちゃんがいるので薬剤が心配でしたが、人体に影響の少ないものを選んでくれました。説明も誠実でした。</p>
-        </div>
-        <div class="voice-item">
-            <div class="voice-meta"><span>枚方市 K様</span><span class="stars">★★★★★</span></div>
-            <p><strong>「店舗の定期管理を依頼」</strong><br>飲食店を経営しており、予防のために依頼。施工以来、一度も見かけていません。もっと早く頼めばよかった。</p>
-        </div>
-        </div>
-</section>
+    </header>
 
-<section class="cta-area">
-    <h2>まずは無料診断・お見積もりから</h2>
-    <p>無理な営業は一切いたしません。安心してお問い合わせください。</p>
-    <a href="tel:05035280140" class="cta-btn">☎ 050-3528-0140</a>
-    <p style="margin-top: 15px;">【年中無休・24時間受付中】</p>
-</section>
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>未来の子供たちのために<br>持続可能な住環境を。</h1>
+            <p>長野県岡谷市から、安心と快適な暮らしをお届けします。</p>
+            <a href="#contact" class="btn">無料相談はこちら</a>
+        </div>
+    </section>
 
-<section style="padding: 60px 5%;">
-    <h2 class="section-title">運営会社</h2>
-    <table class="info-table">
-        <tr><th>運営会社</th><td>株式会社Re:birth</td></tr>
-        <tr><th>所在地</th><td>〒530-0035 大阪府大阪市北区同心２丁目１３ー１８ ５０２</td></tr>
-        <tr><th>電話番号</th><td>050-3528-0140</td></tr>
-        <tr><th>事業内容</th><td>害虫・害獣の駆除および再発防止施工</td></tr>
-    </table>
-</section>
+    <section id="mission" class="section mission">
+        <div class="container">
+            <h2 class="section-title">Mission</h2>
+            
+            <div class="mission-block">
+                <div class="mission-text">
+                    <h3>エネルギーと暮らしの課題解決</h3>
+                    <p>現代社会はエネルギー問題や環境変化など、多くの課題に直面しています。私たちは住環境を通じて、これらの課題解決に取り組み、次世代に誇れる未来を創造します。</p>
+                </div>
+                <div class="mission-img">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="環境イメージ">
+                </div>
+            </div>
 
-<footer>
-    &copy; 2024 害虫レスキュー隊 (株式会社Re:birth) All Rights Reserved.
-</footer>
+            <div class="mission-block">
+                <div class="mission-text">
+                    <h3>地域に根ざした安心の施工</h3>
+                    <p>長野県岡谷市の気候や風土を熟知しているからこそできる提案があります。お客様一人ひとりのライフスタイルに合わせた、最適なリフォーム・住まいづくりをご提供します。</p>
+                </div>
+                <div class="mission-img">
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="施工イメージ">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="service" class="section services">
+        <div class="container">
+            <h2 class="section-title">Service</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-house-chimney"></i></div>
+                    <h3>住宅リフォーム事業</h3>
+                    <p>外壁塗装、屋根修理から内装リノベーションまで。長く安心して住める家づくりをサポートします。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-solar-panel"></i></div>
+                    <h3>スマートハウス事業</h3>
+                    <p>太陽光発電や蓄電池システムの導入支援。環境に優しく、経済的な暮らしをご提案します。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                    <h3>コンサルティング</h3>
+                    <p>お客様のライフプランに合わせた住まいの診断や、補助金活用の提案など、トータルでサポートします。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section voice">
+        <div class="container">
+            <h2 class="section-title">Voice</h2>
+            <div class="voice-grid">
+                <div class="voice-card">
+                    <div class="voice-header">
+                        <div class="voice-avatar" style="background: url('https://randomuser.me/api/portraits/men/32.jpg') center/cover;"></div>
+                        <div class="voice-meta">
+                            <h4>岡谷市 S様</h4>
+                            <span>リフォーム実施</span>
+                        </div>
+                    </div>
+                    <p>親身になって相談に乗っていただき、理想通りの仕上がりになりました。地元の会社なので安心感がありました。</p>
+                </div>
+                <div class="voice-card">
+                    <div class="voice-header">
+                        <div class="voice-avatar" style="background: url('https://randomuser.me/api/portraits/women/44.jpg') center/cover;"></div>
+                        <div class="voice-meta">
+                            <h4>諏訪市 K様</h4>
+                            <span>太陽光設置</span>
+                        </div>
+                    </div>
+                    <p>電気代のシミュレーションから丁寧にしていただき、メリットが明確になりました。工事もスムーズでした。</p>
+                </div>
+                <div class="voice-card">
+                    <div class="voice-header">
+                        <div class="voice-avatar" style="background: url('https://randomuser.me/api/portraits/men/85.jpg') center/cover;"></div>
+                        <div class="voice-meta">
+                            <h4>松本市 T様</h4>
+                            <span>外壁塗装</span>
+                        </div>
+                    </div>
+                    <p>近所への挨拶回りもしっかりしていただき、職人さんのマナーも良かったです。家が新築のように蘇りました。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="company" class="section company">
+        <div class="container">
+            <h2 class="section-title">Company</h2>
+            <table class="company-table">
+                <tr>
+                    <th>会社名</th>
+                    <td>株式会社Gステラ</td>
+                </tr>
+                <tr>
+                    <th>所在地</th>
+                    <td>〒394-0004<br>長野県岡谷市新明町4－19－29</td>
+                </tr>
+                <tr>
+                    <th>事業内容</th>
+                    <td>住宅リフォーム事業、スマートハウス事業、コンサルティング事業<br>（※必要に応じて修正してください）</td>
+                </tr>
+                <tr>
+                    <th>代表者</th>
+                    <td>代表取締役 （お名前）</td>
+                </tr>
+                <tr>
+                    <th>お問い合わせ</th>
+                    <td>00-0000-0000（代表）</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <span class="footer-logo">株式会社Gステラ</span>
+                    <div class="footer-info">
+                        <p>〒394-0004 長野県岡谷市新明町4－19－29</p>
+                        <p>TEL: 00-0000-0000 / FAX: 00-0000-0000</p>
+                        <p>Email: info@example.com</p>
+                    </div>
+                </div>
+                <div class="footer-right">
+                    <a href="#" class="btn">お問い合わせフォーム</a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; G Stella Co., Ltd. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
